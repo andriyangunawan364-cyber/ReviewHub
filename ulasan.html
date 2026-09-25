@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Website ulasan dan rating pelanggan untuk Rental PS, Bioskop Mini, Pesan Makanan, dan layanan lainnya.">
+  <title>ReviewHub — Rating & Kritik Pelanggan</title>
+  <link rel="stylesheet" href="ulasan.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#beranda" aria-label="ReviewHub Beranda">
+      <span class="brand-mark">★</span> Review<span>Hub</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Buka menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="Navigasi utama">
+      <a href="#beranda">Beranda</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#ulasan">Ulasan</a>
+      <a href="#rating">Rating</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#bantuan">Bantuan</a>
+    </nav>
+    <a class="btn btn-small" href="#beri-ulasan">Beri Ulasan</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="beranda">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="pill">★ SUARA PELANGGAN, PRIORITAS KAMI</div>
+      <h1>Ceritakan pengalaman <span>terbaikmu.</span></h1>
+      <p>Bagikan rating, kritik, saran, dan pengalaman setelah menggunakan Rental PS, Bioskop Mini, layanan pesan makanan, atau layanan lainnya.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#beri-ulasan">★ Beri Ulasan</a>
+        <a class="btn btn-outline" href="#ulasan">Lihat Ulasan</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong id="heroTotal">0</strong><small>Total Ulasan</small></div>
+        <div><strong id="heroAverage">0.0</strong><small>Rating Rata-rata</small></div>
+        <div><strong>4</strong><small>Layanan</small></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-label="Ringkasan rating">
+      <div class="floating-card float-left">🎮 <div><b>Rental PS</b><small>★★★★★</small></div></div>
+      <div class="rating-orb">
+        <strong id="heroOrb">0.0</strong>
+        <span>/ 5</span>
+      </div>
+      <div class="hero-stars" id="heroStars">☆☆☆☆☆</div>
+      <h2>Kepuasan Pelanggan</h2>
+      <p>Ringkasan dari seluruh ulasan</p>
+      <div class="floating-card float-right">🍔 <div><b>Pesan Makanan</b><small>★★★★★</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="layanan">
+  <div class="container">
+    <div class="section-title">
+      <span>LAYANAN KAMI</span>
+      <h2>Pilih layanan yang ingin kamu nilai</h2>
+      <p>Klik salah satu layanan untuk langsung mengisi ulasan.</p>
+    </div>
+    <div class="service-grid">
+      <button class="service-card" type="button" data-service="Rental PS">
+        <span class="service-icon purple">🎮</span><h3>Rental PS</h3>
+        <p>Nilai pengalaman bermain dan fasilitas Rental PS.</p><b>Berikan rating →</b>
+      </button>
+      <button class="service-card" type="button" data-service="Bioskop Mini">
+        <span class="service-icon red">🎬</span><h3>Bioskop Mini</h3>
+        <p>Nilai kenyamanan studio dan pengalaman menonton.</p><b>Berikan rating →</b>
+      </button>
+      <button class="service-card" type="button" data-service="Pesan Makanan">
+        <span class="service-icon orange">🍔</span><h3>Pesan Makanan</h3>
+        <p>Nilai makanan, minuman, kecepatan dan pelayanan.</p><b>Berikan rating →</b>
+      </button>
+      <button class="service-card" type="button" data-service="Layanan Lainnya">
+        <span class="service-icon blue">✨</span><h3>Layanan Lainnya</h3>
+        <p>Berikan masukan untuk fasilitas dan layanan lainnya.</p><b>Berikan rating →</b>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="section rating-section" id="rating">
+  <div class="container rating-panel">
+    <div class="rating-summary">
+      <span>RATING PELANGGAN</span>
+      <strong id="averageNumber">0.0</strong>
+      <div class="stars large" id="averageStars">☆☆☆☆☆</div>
+      <p>Berdasarkan <b id="totalReviews">0</b> ulasan</p>
+    </div>
+    <div class="rating-bars">
+      <div class="bar-row"><label>5 ★</label><div class="bar"><i id="bar5"></i></div><b id="count5">0</b></div>
+      <div class="bar-row"><label>4 ★</label><div class="bar"><i id="bar4"></i></div><b id="count4">0</b></div>
+      <div class="bar-row"><label>3 ★</label><div class="bar"><i id="bar3"></i></div><b id="count3">0</b></div>
+      <div class="bar-row"><label>2 ★</label><div class="bar"><i id="bar2"></i></div><b id="count2">0</b></div>
+      <div class="bar-row"><label>1 ★</label><div class="bar"><i id="bar1"></i></div><b id="count1">0</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ulasan">
+  <div class="container">
+    <div class="section-title">
+      <span>ULASAN PELANGGAN</span>
+      <h2>Apa kata mereka?</h2>
+      <p>Cari dan filter pengalaman pelanggan.</p>
+    </div>
+
+    <div class="filters">
+      <label class="search">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="Cari nama, judul, atau isi ulasan..." autocomplete="off">
+      </label>
+      <select id="serviceFilter" aria-label="Filter layanan">
+        <option value="all">Semua Layanan</option>
+        <option value="Rental PS">Rental PS</option>
+        <option value="Bioskop Mini">Bioskop Mini</option>
+        <option value="Pesan Makanan">Pesan Makanan</option>
+        <option value="Layanan Lainnya">Layanan Lainnya</option>
+      </select>
+      <select id="ratingFilter" aria-label="Filter rating">
+        <option value="all">Semua Rating</option>
+        <option value="5">★★★★★</option>
+        <option value="4">★★★★</option>
+        <option value="3">★★★</option>
+        <option value="2">★★</option>
+        <option value="1">★</option>
+      </select>
+    </div>
+
+    <div class="review-grid" id="reviewList"></div>
+    <div class="empty-state hidden" id="emptyState">
+      <div>🔎</div><h3>Ulasan tidak ditemukan</h3><p>Coba ubah pencarian atau filter.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section feedback-section" id="beri-ulasan">
+  <div class="container feedback-grid">
+    <div class="feedback-copy">
+      <span>SUARA ANDA PENTING</span>
+      <h2>Bantu kami menjadi lebih baik.</h2>
+      <p>Setiap masukan dapat menjadi bahan evaluasi untuk meningkatkan kualitas pelayanan.</p>
+      <ul>
+        <li>✓ Rating pengalaman</li>
+        <li>✓ Kritik pelayanan</li>
+        <li>✓ Saran perbaikan</li>
+        <li>✓ Ide layanan baru</li>
+      </ul>
+    </div>
+
+    <form class="review-form" id="reviewForm" novalidate>
+      <h2>Tulis Ulasan</h2>
+      <p>Isi formulir berikut untuk membagikan pengalaman.</p>
+
+      <div class="form-two">
+        <label>Nama
+          <input id="nameInput" maxlength="50" placeholder="Nama kamu" required>
+        </label>
+        <label>Layanan
+          <select id="serviceInput" required>
+            <option value="">Pilih layanan</option>
+            <option value="Rental PS">🎮 Rental PS</option>
+            <option value="Bioskop Mini">🎬 Bioskop Mini</option>
+            <option value="Pesan Makanan">🍔 Pesan Makanan</option>
+            <option value="Layanan Lainnya">✨ Layanan Lainnya</option>
+          </select>
+        </label>
+      </div>
+
+      <label>Rating
+        <div class="star-picker" id="starPicker" role="radiogroup" aria-label="Pilih rating">
+          <button type="button" data-rating="1" aria-label="1 bintang">★</button>
+          <button type="button" data-rating="2" aria-label="2 bintang">★</button>
+          <button type="button" data-rating="3" aria-label="3 bintang">★</button>
+          <button type="button" data-rating="4" aria-label="4 bintang">★</button>
+          <button type="button" data-rating="5" aria-label="5 bintang">★</button>
+        </div>
+        <small id="ratingHelp">Pilih rating 1–5</small>
+      </label>
+
+      <label>Judul Ulasan
+        <input id="titleInput" maxlength="80" placeholder="Contoh: Tempatnya nyaman!" required>
+      </label>
+
+      <label>Kritik & Saran
+        <textarea id="textInput" rows="5" maxlength="500" placeholder="Ceritakan pengalaman, kritik atau saran..." required></textarea>
+        <small><span id="charCount">0</span>/500 karakter</small>
+      </label>
+
+      <label class="check-row"><input id="recommendInput" type="checkbox" checked> Saya merekomendasikan layanan ini.</label>
+      <button class="btn submit" type="submit">Kirim Ulasan ★</button>
+      <p class="form-note">Data ulasan tersimpan di browser ini menggunakan localStorage.</p>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="tentang">
+  <div class="container about-grid">
+    <div>
+      <span>TENTANG KAMI</span>
+      <h2>Membangun pengalaman yang lebih seru dan nyaman.</h2>
+      <p>ReviewHub adalah pusat ulasan pelanggan untuk Rental PS, Bioskop Mini, Pesan Makanan, dan layanan lainnya.</p>
+      <p>Website ini membantu pelanggan memberikan masukan sekaligus membantu pengelola melihat gambaran kepuasan pelanggan.</p>
+    </div>
+    <div class="about-card">
+      <div><strong>100%</strong><span>Form ulasan siap digunakan</span></div>
+      <div><strong>24/7</strong><span>Bisa memberikan ulasan kapan saja</span></div>
+      <div><strong>4+</strong><span>Kategori layanan</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section help-section" id="bantuan">
+  <div class="container">
+    <div class="section-title">
+      <span>PUSAT BANTUAN</span><h2>Butuh bantuan?</h2><p>Gunakan menu bantuan berikut.</p>
+    </div>
+    <div class="help-grid">
+      <a href="#beri-ulasan" class="help-card">📝<h3>Kirim Ulasan</h3><p>Berikan pengalaman dan saran.</p></a>
+      <a href="#rating" class="help-card">⭐<h3>Lihat Rating</h3><p>Lihat ringkasan rating pelanggan.</p></a>
+      <button class="help-card" id="contactBtn" type="button">📞<h3>Hubungi Kami</h3><p>Informasi kontak admin.</p></button>
+      <button class="help-card" id="reportBtn" type="button">🚨<h3>Laporkan Masalah</h3><p>Informasikan masalah pada layanan.</p></button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><a class="brand footer-brand" href="#beranda">★ Review<span>Hub</span></a><p>Tempat pelanggan berbagi rating, kritik dan saran.</p></div>
+    <div><h4>Layanan</h4><a href="#layanan">Rental PS</a><a href="#layanan">Bioskop Mini</a><a href="#layanan">Pesan Makanan</a></div>
+    <div><h4>Informasi</h4><a href="#tentang">Tentang Kami</a><a href="#ulasan">Ulasan</a><a href="#bantuan">Bantuan</a></div>
+    <div><h4>Media Sosial</h4><p>Instagram · Facebook · TikTok · WhatsApp:05782329752</p></div>
+  </div>
+  <div class="footer-bottom">© <span id="year"></span> ReviewHub. Semua hak dilindungi.</div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="modal-backdrop" id="modalBackdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" type="button" aria-label="Tutup">×</button>
+    <h2 id="modalTitle"></h2>
+    <p id="modalBody"></p>
+  </div>
+</div>
+
+<script src="ulasan.js"></script>
+</body>
+</html>
